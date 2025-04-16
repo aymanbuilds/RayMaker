@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.tetris-background');
+    const containers = document.querySelectorAll('.tetris-background');
 
     const shapes = [
         // Classic 7
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const colors = ['#0ff', '#f0f', '#ff0', '#0f0', '#f66', '#66f'];
 
-    function createTetrisShape() {
+    function createTetrisShape(container) {
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         const baseX = Math.floor(Math.random() * (container.clientWidth - 100));
         const baseY = Math.floor(Math.random() * (container.clientHeight - 100));
@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Generate a bunch
-    for (let i = 0; i < 10; i++) {
-        createTetrisShape();
-    }
+    containers.forEach(container => {
+        for (let i = 0; i < 10; i++) {
+            createTetrisShape(container);
+        }
+    });
 });

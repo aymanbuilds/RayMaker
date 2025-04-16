@@ -101,7 +101,7 @@
 <!-- Features Section ------------------------------------------ -->
 <section id="features" class="section-padding">
     <div class="wrapper">
-        <header class="column gap10">
+        <header class="column gap10 aitems-center jcontent-center">
             <h2>Key Features</h2>
             <p>Explore the powerful features that make creating your resume a breeze. With intuitive tools and
                 customizable
@@ -161,6 +161,50 @@
     </div>
 </section>
 <!-- End Features Section -------------------------------------- -->
+
+<!-- Pricing Section ------------------------------------------- -->
+<section id="pricing" class="wrapper relative section-padding">
+    <!-- Tetris Background Wrapper *****************************-->
+    <div class="tetris-background"></div>
+    <!-- End Tetris Background Wrapper ************************* -->
+
+    <div class="wrapper">
+        <header class="column gap10 aitems-center jcontent-center">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Start for free — upgrade anytime for more power and flexibility.</p>
+        </header>
+        <div class="relative row fwrap gap40 aitems-center jcontent-center marginT40">
+            <!-- Free Plan -->
+            <article class="pricing-card">
+                <h3>Free Plan</h3>
+                <p class="price">$0<span>/month</span></p>
+                <ul class="features-list">
+                    <li>Create up to <strong>2 resumes per day</strong></li>
+                    <li>Use <strong>1 professional template</strong></li>
+                    <li><strong>No watermark</strong> on resumes</li>
+                    <li><strong>Download as PDF</strong></li>
+                    <li><strong>Shareable online resume link</strong></li>
+                </ul>
+                <a href="#" class="button primary-outline">Start for Free</a>
+            </article>
+
+            <!-- Premium Plan -->
+            <article class="pricing-card premium">
+                <h3>Premium Plan</h3>
+                <p class="price">$3<span>/month</span></p>
+                <ul class="features-list">
+                    <li><strong>Unlimited resumes</strong>, anytime</li>
+                    <li>Access to <strong>all templates</strong></li>
+                    <li><strong>No watermarks</strong> ever</li>
+                    <li><strong>Download as PDF</strong></li>
+                    <li><strong>Share online links</strong> instantly</li>
+                </ul>
+                <a href="#" class="button primary-fill">Upgrade to Premium</a>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- End Pricing Section --------------------------------------- -->
 
 <!-- Scripts --------------------------------------------------- -->
 <script src="{{ url_for('static', filename='scripts/decoration/tetris.js') }}"></script>

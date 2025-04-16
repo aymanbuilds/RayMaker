@@ -176,6 +176,10 @@ section {
     gap: 20px;
 }
 
+.gap40 {
+    gap: 40px;
+}
+
 .fwrap {
     flex-wrap: wrap;
 }
@@ -204,12 +208,22 @@ section {
 .primary-outline::before {
     content: '';
     position: absolute;
-    left: -10px;
-    width: calc(100% + 6px);
+    width: 2px;
     height: calc(100% - 6px);
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: -4.5px;
+    transform: translateY(-50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.primary-outline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: calc(100% - 6px);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
     border: 1.5px solid var(--primary-color);
 }
 
@@ -229,7 +243,6 @@ section {
 .primary-fill::before {
     content: '';
     position: absolute;
-    left: -10px;
     width: calc(100% + 6px);
     height: calc(100% - 6px);
     top: 50%;
@@ -332,6 +345,60 @@ nav.main ul li a:hover {
 }
 
 /* End Features Section Styles ****************************************************************** */
+
+/*  Pricing Section Styles ************************************************************************ */
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 30px;
+    background-color: white;
+    border: 1.5px solid var(--primary-color);
+}
+
+.pricing-card.premium {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pricing-card.premium .features-list li {
+    color: white;
+}
+
+.pricing-card.premium .button {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.pricing-card.premium .button::before {
+    border: 1px solid white;
+}
+
+.pricing-card .price {
+    font-size: 1.5rem;
+}
+
+.pricing-card .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pricing-card .features-list li {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.pricing-card .button {
+    align-self: flex-start;
+    margin: 20px auto 0 auto;
+    padding: 8px 10px;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/*  End Pricing Section Styles ******************************************************************** */
 
 /* Media Queries ******************************************************************************** */
 
