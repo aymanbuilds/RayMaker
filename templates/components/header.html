@@ -2,16 +2,25 @@
     <div class="logo-container">
         <a href="{{ url_for('index') }}">RayMaker</a>
     </div>
-    <button class="menu-toggle primary-fill" aria-label="Toggle menu">
+    <button id="open-menu-btn" class="menu-toggle primary-fill" aria-label="Toggle menu">
         ☰
     </button>
     <nav class="main">
+        <button id="close-menu-btn" class="menu-toggle primary-fill" aria-label="Close menu">
+            Close Menu
+        </button>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#">Features</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">FAQ</a></li>
+            <li class="mobile-link"><a href="#">Blog</a></li>
+            <li class="mobile-link">
+                <a href="#">
+                    <button class="primary-outline">Sign Up</button>
+                </a>
+            </li>
         </ul>
     </nav>
     <div class="action-buttons row gap20">
