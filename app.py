@@ -1,9 +1,11 @@
 # Import necessary modules for the web application
 from flask import Flask, render_template, redirect, url_for, request, abort
 from flask_talisman import Talisman
+from flask_minify import Minify
 
 # Initialize the Flask application
 app = Flask(__name__)
+Minify(app=app, html=True, js=False, cssless=False)
 
 # Application configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'

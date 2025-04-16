@@ -12,6 +12,10 @@
     --light-color: rgb(238, 246, 255);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -58,6 +62,10 @@ button {
 a {
     text-decoration: none;
     font-size: 0.9rem;
+}
+
+section {
+    scroll-margin-top: 80px;
 }
 
 /* End Default Styles *************************************************************************** */
@@ -266,6 +274,12 @@ nav.main ul {
 
 nav.main ul li a {
     color: #333;
+    transition: text-shadow 0.4s;
+}
+
+nav.main ul li a:hover {
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
 }
 
 /* End Header Styles **************************************************************************** */

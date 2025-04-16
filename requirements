@@ -3,3 +3,4 @@ flask-sqlalchemy
 bleach
 flask-wtf
 flask-talisman
+flask-minify

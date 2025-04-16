@@ -14,4 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     // End Header Toggle Menu Buttons -----------------------------------------------------
+
+    // Mobile Hyperlink Click -------------------------------------------------------------
+    document.querySelectorAll('header.main nav ul li a').forEach(hyperlink => {
+        hyperlink.addEventListener('click', function () {
+            if (document.querySelector('header.main nav'))
+                document.querySelector('header.main nav').classList.remove('show');
+        });
+    });
+    // End Mobile Hyperlink Click ---------------------------------------------------------
+
 });
