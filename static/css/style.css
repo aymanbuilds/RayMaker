@@ -37,6 +37,7 @@ h2 {
     font-size: 2rem;
     line-height: 1.5;
     font-weight: 600;
+    font-family: "Aldrich", sans-serif;
 }
 
 h3 {
@@ -270,7 +271,7 @@ header.main {
 .logo-container a {
     font-size: 1.4rem;
     font-family: "Aldrich", sans-serif;
-    color: #333;
+    color: var(--primary-color);
 }
 
 .mobile-link {
