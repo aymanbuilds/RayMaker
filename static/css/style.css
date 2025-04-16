@@ -1,0 +1,371 @@
+/* Google Fonts ********************************************************************************* */
+
+@import url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+/* End Google Fonts ***************************************************************************** */
+
+/* Default Styles ******************************************************************************* */
+
+:root {
+    --primary-color: royalblue;
+    --light-color: rgb(238, 246, 255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: "Aldrich", sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+button {
+    padding: 8px 10px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    outline: none;
+    font-family: "Aldrich", sans-serif;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* End Default Styles *************************************************************************** */
+
+/* Decorations ********************************************************************************** */
+
+.tetris-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tetris-block {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #0ff;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    opacity: 0;
+    animation: tetris-fadeIn 1s ease-out forwards, tetris-floaty 5s infinite alternate;
+    border-radius: 4px;
+}
+
+@keyframes tetris-fadeIn {
+    to {
+        opacity: 0.2;
+    }
+}
+
+@keyframes tetris-floaty {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* End Decorations ****************************************************************************** */
+
+/* Custom Class Attributes ********************************************************************** */
+
+.wrapper {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relative {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-2 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.text-dark {
+    color: #333;
+}
+
+.text-gray {
+    color: #555;
+}
+
+.text-light {
+    color: white;
+}
+
+.row {
+    display: flex;
+}
+
+.aitems-center {
+    align-items: center;
+}
+
+.jcontent-center {
+    justify-content: center;
+}
+
+.jcontent-sbetween {
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+.fwrap {
+    flex-wrap: wrap;
+}
+
+.section-padding {
+    padding: 40px 80px;
+}
+
+.talign-center {
+    text-align: center;
+}
+
+.primary-outline {
+    position: relative;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.primary-outline:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 10px;
+    transform: translate(-2px, -2px);
+}
+
+.primary-outline::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    width: calc(100% + 6px);
+    height: calc(100% - 6px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.primary-fill {
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1.5px solid var(--primary-color);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.primary-fill:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px;
+    transform: translate(-2px, -2px);
+}
+
+.primary-fill::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    width: calc(100% + 6px);
+    height: calc(100% - 6px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.marginT40 {
+    margin-top: 40px;
+}
+
+/* End Custom Class Attributes ****************************************************************** */
+
+/* Header Styles ******************************************************************************** */
+
+header.main {
+    padding: 20px 40px;
+}
+
+.logo-container a {
+    font-size: 1.4rem;
+    font-family: "Aldrich", sans-serif;
+    color: #333;
+}
+
+nav.main ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav.main ul li a {
+    color: #333;
+}
+
+/* End Header Styles **************************************************************************** */
+
+/* Header Styles ******************************************************************************** */
+
+.menu-toggle {
+    display: none;
+}
+
+/* End Header Styles **************************************************************************** */
+
+/* Home Styles ********************************************************************************** */
+
+#home {
+    min-height: 450px;
+}
+
+#home-sign-up-btn {
+    display: none;
+}
+
+/* End Home Styles ****************************************************************************** */
+
+/* Features Section Styles ********************************************************************** */
+
+#features {
+    background-color: var(--light-color);
+}
+
+.feature-card {
+    background-color: white;
+    padding: 20px;
+}
+
+.feature-card figure {
+    display: flex;
+    gap: 10px;
+}
+
+.feature-card figure img {
+    width: 48px;
+    height: 48px;
+}
+
+.feature-card figure figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* End Features Section Styles ****************************************************************** */
+
+/* Media Queries ******************************************************************************** */
+
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header.main nav {
+        display: none;
+    }
+
+    header.main .action-buttons {
+        display: none;
+    }
+
+    #home-sign-up-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+
+    a {
+        font-size: 0.85rem;
+    }
+}
+
+/*  End Media Queries **************************************************************************** */

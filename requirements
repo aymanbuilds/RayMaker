@@ -1,0 +1,5 @@
+flask
+flask-sqlalchemy
+bleach
+flask-wtf
+flask-talisman

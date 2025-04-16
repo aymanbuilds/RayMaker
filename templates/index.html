@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>RayMaker - Free Online Resume Builder for Professionals</title>
+
+<meta name="description"
+    content="Create professional resumes quickly and for free with RayMaker. Easy-to-use, ATS-friendly templates, and instant download options." />
+<meta name="keywords"
+    content="free resume builder, online resume builder, create resume, professional resume templates, ATS resume, build CV online" />
+<meta name="author" content="RayMaker" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="RayMaker – Free Online Resume Builder for Professionals" />
+<meta property="og:description"
+    content="Build a standout resume online for free. Use professional templates and download your resume instantly with RayMaker." />
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="RayMaker – Free Online Resume Builder" />
+<meta name="twitter:description"
+    content="Create your professional resume online for free using RayMaker's easy resume builder." />
+<meta name="twitter:image" content="https://yourdomain.com/twitter-card.jpg" />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RayMaker",
+      "image": "https://yourdomain.com/logo.png",
+      "url": "https://yourdomain.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "description": "RayMaker is a free and premium online resume builder that helps users create professional, ATS-friendly resumes with ease.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Plan",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Plan",
+          "price": "3.00",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": 3.00,
+            "priceCurrency": "USD",
+            "billingDuration": "P1M",
+            "billingIncrement": 1,
+            "unitText": "month"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "214"
+      }
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+
+<!-- Including Header ------------------------------------------ -->
+{% include 'components/header.html' %}
+<!-- End Header ------------------------------------------------ -->
+
+<!-- Home Section ---------------------------------------------- -->
+<section id="home" class="wrapper relative section-padding center">
+    <!-- Tetris Background Wrapper *****************************-->
+    <div class="tetris-background"></div>
+    <!-- End Tetris Background Wrapper ************************* -->
+
+    <div class="relative column aitems-center jcontent-center gap20 talign-center">
+        <header>
+            <h1>Free Online Resume Builder - Create a Professional Resume in Minutes</h1>
+        </header>
+        <p>Create a job-winning resume effortlessly using our professional resume builder. Start for free and take
+            advantage of customizable templates, ATS-friendly formatting, and an intuitive editor that ensures your
+            resume stands out. Whether you're just starting out or updating your career, our tool makes it easy to
+            create a polished, professional resume in minutes, with premium features available for even more
+            customization and control.</p>
+        <a href="#" class="row fwrap aitems-center jcontent-center gap20">
+            <button class="primary-fill">Get Started For Free</button>
+            <button id="home-sign-up-btn" class="primary-outline">Sign Up</button>
+        </a>
+    </div>
+</section>
+<!-- End Home Section ------------------------------------------ -->
+
+<!-- Features Section ------------------------------------------ -->
+<section id="features" class="section-padding">
+    <div class="wrapper">
+        <header class="column gap10">
+            <h2>Key Features</h2>
+            <p>Explore the powerful features that make creating your resume a breeze. With intuitive tools and
+                customizable
+                options, RayMaker helps you stand out to recruiters.</p>
+        </header>
+        <div class="grid-2 marginT40">
+            <article class="feature-card">
+                <figure>
+                    <img width="48" height="48" src="{{ url_for('static', filename='images/resume-template.svg') }}"
+                        alt="Customizable Templates" />
+                    <figcaption>
+                        <h3>Tailored Templates for Every Job</h3>
+                        <p>Choose from a wide range of professionally designed templates to suit any industry. Customize
+                            your layout and design to match your unique style and career goals.</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="feature-card">
+                <figure>
+                    <img width="48" height="48"
+                        src="{{ url_for('static', filename='images/application-system-tracking.svg') }}"
+                        alt="ATS-Friendly" />
+                    <figcaption>
+                        <h3>Optimized for ATS</h3>
+                        <p>Ensure your resume passes through Applicant Tracking Systems with ease. Our templates are
+                            designed to meet ATS requirements, increasing your chances of getting noticed by recruiters.
+                        </p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="feature-card">
+                <figure>
+                    <img width="48" height="48" src="{{ url_for('static', filename='images/resume-editor.svg') }}"
+                        alt="Intuitive Editor" />
+                    <figcaption>
+                        <h3>Fast and Easy Resume Editor</h3>
+                        <p>Build your resume quickly with our intuitive editor. Easily fill out your details, rearrange
+                            content, and preview your resume in real-time as you go.</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="feature-card">
+                <figure>
+                    <img idth="48" height="48" src="{{ url_for('static', filename='images/download-resume.svg') }}"
+                        alt="Instant Download" />
+                    <figcaption>
+                        <h3>Instant Download & Sharing</h3>
+                        <p>Once you're happy with your resume, download it in multiple formats or share it directly with
+                            potential employers. Fast, efficient, and hassle-free.</p>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- End Features Section -------------------------------------- -->
+
+<!-- Scripts --------------------------------------------------- -->
+<script src="{{ url_for('static', filename='scripts/decoration/tetris.js') }}"></script>
+<!-- End Scripts ----------------------------------------------- -->
+
+{% endblock %}
