@@ -9,12 +9,17 @@ import os
 # Forms Modules
 from forms import NewsletterForm
 
+# Routes
+from editor.routes import editor_blueprint
+
 # End Import ******************************************************************************
 # *****************************************************************************************
 
 # Initialize the Flask application
 app = Flask(__name__)
 Minify(app=app, html=True, js=False, cssless=False)
+
+app.register_blueprint(editor_blueprint, url_prefix='/resume-builder')
 
 # Application configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Resume Editor - Create and Customize Your Resume | RayMaker</title>
+
+<meta name="description"
+    content="Start building your professional resume with RayMaker's free editor. Customize sections, choose templates, and download instantly — no login required." />
+<meta name="keywords"
+    content="resume editor, online resume builder, edit resume, create CV, ATS resume editor, customize resume, RayMaker" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Resume Editor – Free Online Resume Builder | RayMaker" />
+<meta property="og:description"
+    content="Use RayMaker's resume editor to create and customize your resume online for free. No signup, just instant resume building and download." />
+<meta property="og:image" content="https://yourdomain.com/og-image-editor.jpg" />
+<meta property="og:url" content="https://yourdomain.com/editor" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Resume Editor – Build Your Resume Instantly" />
+<meta name="twitter:description"
+    content="Customize your resume with our free online editor. Choose templates and download your CV instantly. Powered by RayMaker." />
+<meta name="twitter:image" content="https://yourdomain.com/twitter-editor-card.jpg" />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RayMaker Resume Editor",
+  "image": "https://yourdomain.com/logo.png",
+  "url": "https://yourdomain.com/editor",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "RayMaker's resume editor lets you easily create, customize, and download your resume online for free.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/editor/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="column" style="height: 100%;">
+    <!-- Including Header ------------------------------------------ -->
+    {% include 'components/editor/header.html' %}
+    <!-- End Header ------------------------------------------------ -->
+
+    <!-- Editor Wrapper Section ------------------------------------ -->
+    <div class="editor-layout">
+        <!-- Including Sidebar ----------------------------------------- -->
+        {% include 'components/editor/sidebar.html' %}
+        <!-- End Sidebar ----------------------------------------------- -->
+
+        <div class="editor-preview">
+            <div class="resume-page">
+                <!-- Resume content goes here -->
+            </div>
+        </div>
+    </div>
+    <!-- End Editor Wrapper Section -------------------------------- -->
+</div>
+
+<!-- Scripts --------------------------------------------------- -->
+<script src="{{ url_for('static', filename='scripts/editor/script.js') }}"></script>
+<!-- End Scripts ----------------------------------------------- -->
+
+{% endblock %}

@@ -7,9 +7,6 @@
     content="Create professional resumes quickly and for free with RayMaker. Easy-to-use, ATS-friendly templates, and instant download options." />
 <meta name="keywords"
     content="free resume builder, online resume builder, create resume, professional resume templates, ATS resume, build CV online" />
-<meta name="author" content="RayMaker" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta charset="UTF-8" />
 <meta name="robots" content="index, follow" />
 
 <!-- Open Graph -->
@@ -67,6 +64,9 @@
       }
     }
 </script>
+
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -91,10 +91,14 @@
                 resume stands out. Whether you're just starting out or updating your career, our tool makes it easy to
                 create a polished, professional resume in minutes, with premium features available for even more
                 customization and control.</p>
-            <a href="#" class="row fwrap aitems-center jcontent-center gap20">
-                <button class="primary-fill">Get Started For Free</button>
-                <button id="home-sign-up-btn" class="primary-outline">Sign Up</button>
-            </a>
+            <div class="row fwrap aitems-center jcontent-center gap20">
+                <a href="{{ url_for('resume_builder.editor') }}">
+                    <button class="primary-fill">Get Started For Free</button>
+                </a>
+                <a href="#">
+                    <button id="home-sign-up-btn" class="primary-outline">Sign Up</button>
+                </a>
+            </div>
         </div>
     </section>
     <!-- End Home Section ------------------------------------------ -->

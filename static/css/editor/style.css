@@ -1,0 +1,344 @@
+/* Google Fonts ********************************************************************************* */
+
+@import url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+/* End Google Fonts ***************************************************************************** */
+
+/* Default Styles ******************************************************************************* */
+
+:root {
+    --primary-color: royalblue;
+    --light-color: rgb(238, 246, 255);
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: "Aldrich", sans-serif;
+}
+
+h2 {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: "Aldrich", sans-serif;
+}
+
+h3 {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+p,
+.form-label {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.form-label {
+    text-align: left;
+}
+
+button,
+input[type='submit'] {
+    padding: 8px 10px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    outline: none;
+    font-family: "Aldrich", sans-serif;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+section header {
+    text-align: center;
+}
+
+.mobile-link {
+    display: none;
+}
+
+/* End Default Styles *************************************************************************** */
+
+/* Custom Class Attributes ********************************************************************** */
+
+.wrapper {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relative {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-2 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.form-input {
+    font-size: 0.85rem;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+}
+
+.form-input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+.row {
+    display: flex;
+}
+
+.aitems-center {
+    align-items: center;
+}
+
+.jcontent-center {
+    justify-content: center;
+}
+
+.jcontent-sbetween {
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+.gap40 {
+    gap: 40px;
+}
+
+.fwrap {
+    flex-wrap: wrap;
+}
+
+.section-padding {
+    padding: 40px 80px;
+}
+
+.talign-center {
+    text-align: center;
+}
+
+.primary-outline {
+    position: relative;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.primary-outline:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 10px;
+    transform: translate(-2px, -2px);
+}
+
+.primary-outline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: calc(100% - 6px);
+    top: 50%;
+    left: -4.5px;
+    transform: translateY(-50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.primary-outline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: calc(100% - 6px);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.primary-fill {
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1.5px solid var(--primary-color);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.primary-fill:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px;
+    transform: translate(-2px, -2px);
+}
+
+.primary-fill::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 6px);
+    height: calc(100% - 6px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid var(--primary-color);
+}
+
+.marginT40 {
+    margin-top: 40px;
+}
+
+/* End Custom Class Attributes ****************************************************************** */
+
+/* Header Styles ******************************************************************************** */
+
+header.main {
+    padding: 0 40px;
+    height: 80px;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid #bbb;
+}
+
+.logo-container a {
+    font-size: 1.4rem;
+    font-family: "Aldrich", sans-serif;
+    color: var(--primary-color);
+}
+
+.logo-container h1 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+/* End Header Styles **************************************************************************** */
+
+/* Editor Styles ******************************************************************************** */
+
+.editor-layout {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+.editor-layout .sidebar {
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    scrollbar-width: thin;
+    overflow-y: auto;
+    border-right: 1px solid #bbb;
+}
+
+.editor-preview {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--light-color);
+    scrollbar-width: thin;
+}
+
+.resume-page {
+    Width: 794px;
+    Height: 1123px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 40px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+}
+
+/* End Editor Styles **************************************************************************** */
+
+/* Sidebar Items Styles ************************************************************************* */
+
+.sidebar {
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar-form-container {
+    display: none;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.sidebar-section.expanded .sidebar-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .primary-fill{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+}
+
+.sidebar h2{
+    font-weight: 500;
+}
+
+/* End Sidebar Items Styles ********************************************************************* */
