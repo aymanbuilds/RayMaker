@@ -206,9 +206,60 @@
 </section>
 <!-- End Pricing Section --------------------------------------- -->
 
+<!-- Testimonials Section -------------------------------------- -->
+<section id="testimonials" class="section-padding">
+    <div class="wrapper">
+        <header class="column gap10 aitems-center jcontent-center">
+            <h2>What Job Seekers Say About RayMaker</h2>
+            <p>See how professionals and recent graduates are using our resume builder to land interviews faster.
+                Real feedback from early users who created standout resumes with ease.</p>
+        </header>
+
+        <div class="testimonials-container marginT40 row aitems-center jcontent-center fwrap gap10">
+            <button class="primary-fill testimonial-prev" aria-label="Previous testimonial">&#8592;</button>
+
+            <div class="testimonial-wrapper">
+                <figure class="testimonial-card active">
+                    <blockquote>
+                        <p>"RayMaker helped me create a clean, professional resume in minutes. I love how easy it was to
+                            customize!"</p>
+                    </blockquote>
+                    <figcaption>Sam D., Marketing Graduate</figcaption>
+                </figure>
+
+                <figure class="testimonial-card">
+                    <blockquote>
+                        <p>"The shareable resume link was a game-changer. I could send it directly with job
+                            applications—super efficient!"</p>
+                    </blockquote>
+                    <figcaption>Fatima K., UX Designer</figcaption>
+                </figure>
+
+                <figure class="testimonial-card">
+                    <blockquote>
+                        <p>"I didn’t expect much for free, but RayMaker totally surprised me. It’s now my go-to resume
+                            tool!"</p>
+                    </blockquote>
+                    <figcaption>Leo M., Junior Developer</figcaption>
+                </figure>
+            </div>
+
+            <button class="primary-fill testimonial-next" aria-label="Next testimonial">&#8594;</button>
+        </div>
+
+        <div class="testimonial-indicators row jcontent-center gap10 marginT20">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
+</section>
+<!-- End Testimonials Section ---------------------------------- -->
+
 <!-- Scripts --------------------------------------------------- -->
 <script src="{{ url_for('static', filename='scripts/decoration/tetris.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/common/script.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/home/script.js') }}"></script>
 <!-- End Scripts ----------------------------------------------- -->
 
 {% endblock %}

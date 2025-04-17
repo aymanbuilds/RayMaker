@@ -69,6 +69,14 @@ section {
     scroll-margin-top: 80px;
 }
 
+section header {
+    text-align: center;
+}
+
+.mobile-link {
+    display: none;
+}
+
 /* End Default Styles *************************************************************************** */
 
 /* Decorations ********************************************************************************** */
@@ -274,10 +282,6 @@ header.main {
     color: var(--primary-color);
 }
 
-.mobile-link {
-    display: none;
-}
-
 nav.main ul {
     display: flex;
     align-items: center;
@@ -347,7 +351,7 @@ nav.main ul li a:hover {
 
 /* End Features Section Styles ****************************************************************** */
 
-/*  Pricing Section Styles ************************************************************************ */
+/* Pricing Section Styles *********************************************************************** */
 
 .pricing-card {
     display: flex;
@@ -399,7 +403,71 @@ nav.main ul li a:hover {
     font-size: 0.8rem;
 }
 
-/*  End Pricing Section Styles ******************************************************************** */
+/* End Pricing Section Styles ******************************************************************* */
+
+/* Testimonials Section Styles ****************************************************************** */
+
+#testimonials {
+    background-color: var(--light-color);
+}
+
+.testimonial-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.testimonial-card p {
+    font-style: italic;
+}
+
+.testimonial-card figcaption {
+    font-size: 1.5rem;
+}
+
+.testimonial-indicators {
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 40px;
+    height: 8px;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    transition: background-color 0.4s ease;
+}
+
+.indicator.active {
+    background-color: var(--primary-color);
+}
+
+/* End Testimonials Section Styles ************************************************************** */
 
 /* Media Queries ******************************************************************************** */
 
@@ -437,15 +505,11 @@ nav.main ul li a:hover {
     #close-menu-btn {
         align-self: flex-start;
         margin: 0 auto;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .mobile-link {
         display: block;
-    }
-
-    .mobile-link button {
-        font-size: 2rem;
     }
 
     header.main nav button::before {
@@ -457,7 +521,7 @@ nav.main ul li a:hover {
     }
 
     header.main nav ul li a {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     header.main .action-buttons {
@@ -466,6 +530,12 @@ nav.main ul li a:hover {
 
     #home-sign-up-btn {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .testimonials-container {
+        flex-direction: column;
     }
 }
 
@@ -503,6 +573,14 @@ nav.main ul li a:hover {
 
     a {
         font-size: 0.85rem;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-card figcaption {
+        font-size: 1.2rem;
     }
 }
 

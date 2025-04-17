@@ -23,5 +23,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     // End Mobile Hyperlink Click ---------------------------------------------------------
-
 });
