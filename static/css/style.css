@@ -145,14 +145,14 @@ section header {
 }
 
 .form-input {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: 10px;
     outline: none;
     border: 1px solid #aaa;
 }
 
 .form-input:focus {
-    outline: 1.5px solid var(--primary-color);
+    outline: 1px solid var(--primary-color);
 }
 
 .row {
@@ -500,6 +500,10 @@ nav.main ul li a:hover {
     opacity: 1;
 }
 
+.faq-question-container{
+    cursor: pointer;
+}
+
 .faq-question {
     cursor: pointer;
     font-weight: 600;
@@ -579,18 +583,6 @@ footer .wrapper {
 .footer-newsletter form {
     display: flex;
     gap: 10px;
-}
-
-.footer-newsletter button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.footer-newsletter button:hover {
-    background-color: #0056b3;
 }
 
 .copyright{

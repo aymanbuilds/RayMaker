@@ -53,12 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // FAQ --------------------------------------------------------------------------------
     document.querySelectorAll('.faq-item').forEach(item => {
-        const toggleElements = item.querySelectorAll('.faq-question, button');
+        const container = item.querySelector('.faq-question-container');
+        const button = item.querySelector('button');
 
-        toggleElements.forEach(el => {
-            el.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
+        container.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+
+        button.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent bubbling to container
+            item.classList.toggle('active');
         });
     });
     // End FAQ ----------------------------------------------------------------------------
