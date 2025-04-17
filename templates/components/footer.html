@@ -1,0 +1,47 @@
+<footer class="main column gap40">
+    <div class="wrapper row fwrap jcontent-center">
+        <div class="footer-logo-container column gap10">
+            <div class="logo-container">
+                <a href="{{ url_for('index') }}">RayMaker</a>
+            </div>
+            <p class="footer-description">
+                Create a professional resume in minutes with customizable templates, ATS-friendly formatting, and an
+                intuitive editor.
+            </p>
+        </div>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-legal-links">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Disclaimer</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-newsletter">
+            <form action="#" method="post" class="column">
+                <div class="column gap10">
+                    {{ newsletter_form.email.label(class="form-label") }}
+                    {{ newsletter_form.email(class="form-input", placeholder="Enter your email") }}
+                </div>
+                <button type="submit" class="primary-fill">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© <span id="copyright-year">2025</span> Ayman Atif. All Rights Reserved.</p>
+    </div>
+</footer>

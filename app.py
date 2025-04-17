@@ -1,7 +1,15 @@
-# Import necessary modules for the web application
+# Import necessary modules for the web application ***************************************
+
+# Flask modules
 from flask import Flask, render_template, redirect, url_for, request, abort
 from flask_talisman import Talisman
 from flask_minify import Minify
+
+# Forms Modules
+from forms import NewsletterForm
+
+# End Import ******************************************************************************
+# *****************************************************************************************
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -28,10 +36,10 @@ csp = {
 Talisman(app, content_security_policy=csp, strict_transport_security=True, referrer_policy='same-origin')
 
 # Default route (Home)
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-
-    return render_template('index.html')
+    newsletter_form = NewsletterForm()
+    return render_template('index.html', newsletter_form=newsletter_form)
 
 # Run the application
 if __name__ == '__main__':

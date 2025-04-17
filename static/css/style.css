@@ -41,17 +41,23 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     font-weight: 600;
 }
 
-p {
+p,
+.form-label {
     font-size: 0.8rem;
     line-height: 1.5;
 }
 
-button {
+.form-label {
+    text-align: left;
+}
+
+button,
+input[type='submit'] {
     padding: 8px 10px;
     font-weight: 500;
     font-size: 0.8rem;
@@ -138,16 +144,15 @@ section header {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
-.text-dark {
-    color: #333;
+.form-input {
+    font-size: 0.9rem;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
 }
 
-.text-gray {
-    color: #555;
-}
-
-.text-light {
-    color: white;
+.form-input:focus {
+    outline: 1.5px solid var(--primary-color);
 }
 
 .row {
@@ -458,7 +463,6 @@ nav.main ul li a:hover {
     width: 40px;
     height: 8px;
     background-color: white;
-    border: 1px solid var(--primary-color);
     border-radius: 2px;
     transition: background-color 0.4s ease;
 }
@@ -468,6 +472,136 @@ nav.main ul li a:hover {
 }
 
 /* End Testimonials Section Styles ************************************************************** */
+
+/* FAQ Section Style **************************************************************************** */
+
+.faq-item {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+}
+
+.faq-answer {
+    max-height: 0;
+    padding-right: 60px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    /* or adjust based on your content */
+    opacity: 1;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* End FAQ Section Style ************************************************************************ */
+
+/* Footer Style ********************************************************************************* */
+
+footer {
+    padding: 40px;
+    background-color: var(--light-color);
+}
+
+footer .wrapper {
+    gap: 80px;
+}
+
+.footer-logo-container {
+    max-width: 300px;
+}
+
+.footer-description {
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    list-style-type: square;
+}
+
+.footer-nav ul li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.footer-legal-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    list-style-type: square;
+}
+
+.footer-legal-links ul li a {
+    color: #666;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.footer-legal-links ul li a:hover,
+.footer-nav ul li a:hover {
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
+}
+
+.footer-newsletter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-newsletter p {
+    text-align: left;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: #0056b3;
+}
+
+.copyright{
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 910px;
+    margin: 0 auto;
+}
+
+/* End Footer Style ***************************************************************************** */
 
 /* Media Queries ******************************************************************************** */
 
@@ -562,7 +696,8 @@ nav.main ul li a:hover {
         font-size: 1.2rem;
     }
 
-    p {
+    p,
+    .form-label {
         font-size: 0.9rem;
     }
 
@@ -581,6 +716,12 @@ nav.main ul li a:hover {
 
     .testimonial-card figcaption {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width:530px) {
+    footer .wrapper {
+        gap: 40px;
     }
 }
 

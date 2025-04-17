@@ -23,4 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     // End Mobile Hyperlink Click ---------------------------------------------------------
+
+    // Footer Copyright Section -----------------------------------------------------------
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    // End Footer Copyright Section -------------------------------------------------------
 });

@@ -50,4 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     startAutoSlide();
     // End Testimonials -------------------------------------------------------------------
+
+    // FAQ --------------------------------------------------------------------------------
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const toggleElements = item.querySelectorAll('.faq-question, button');
+
+        toggleElements.forEach(el => {
+            el.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    });
+    // End FAQ ----------------------------------------------------------------------------
 });

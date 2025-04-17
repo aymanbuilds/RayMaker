@@ -75,186 +75,290 @@
 {% include 'components/header.html' %}
 <!-- End Header ------------------------------------------------ -->
 
-<!-- Home Section ---------------------------------------------- -->
-<section id="home" class="wrapper relative section-padding center">
-    <!-- Tetris Background Wrapper *****************************-->
-    <div class="tetris-background"></div>
-    <!-- End Tetris Background Wrapper ************************* -->
+<main>
+    <!-- Home Section ---------------------------------------------- -->
+    <section id="home" class="wrapper relative section-padding center">
+        <!-- Tetris Background Wrapper *****************************-->
+        <div class="tetris-background"></div>
+        <!-- End Tetris Background Wrapper ************************* -->
 
-    <div class="relative column aitems-center jcontent-center gap20 talign-center">
-        <header>
-            <h1>Free Online Resume Builder - Create a Professional Resume in Minutes</h1>
-        </header>
-        <p>Create a job-winning resume effortlessly using our professional resume builder. Start for free and take
-            advantage of customizable templates, ATS-friendly formatting, and an intuitive editor that ensures your
-            resume stands out. Whether you're just starting out or updating your career, our tool makes it easy to
-            create a polished, professional resume in minutes, with premium features available for even more
-            customization and control.</p>
-        <a href="#" class="row fwrap aitems-center jcontent-center gap20">
-            <button class="primary-fill">Get Started For Free</button>
-            <button id="home-sign-up-btn" class="primary-outline">Sign Up</button>
-        </a>
-    </div>
-</section>
-<!-- End Home Section ------------------------------------------ -->
-
-<!-- Features Section ------------------------------------------ -->
-<section id="features" class="section-padding">
-    <div class="wrapper">
-        <header class="column gap10 aitems-center jcontent-center">
-            <h2>Key Features</h2>
-            <p>Explore the powerful features that make creating your resume a breeze. With intuitive tools and
-                customizable
-                options, RayMaker helps you stand out to recruiters.</p>
-        </header>
-        <div class="grid-2 marginT40">
-            <article class="feature-card">
-                <figure>
-                    <img width="48" height="48" src="{{ url_for('static', filename='images/resume-template.svg') }}"
-                        alt="Customizable resume template icon for tailored job applications" />
-                    <figcaption>
-                        <h3>Tailored Templates for Every Job</h3>
-                        <p>Choose from a wide range of professionally designed templates to suit any industry. Customize
-                            your layout and design to match your unique style and career goals.</p>
-                    </figcaption>
-                </figure>
-            </article>
-
-            <article class="feature-card">
-                <figure>
-                    <img width="48" height="48"
-                        src="{{ url_for('static', filename='images/application-system-tracking.svg') }}"
-                        alt="ATS-friendly resume icon ensuring compatibility with applicant tracking systems" />
-                    <figcaption>
-                        <h3>Optimized for ATS</h3>
-                        <p>Ensure your resume passes through Applicant Tracking Systems with ease. Our templates are
-                            designed to meet ATS requirements, increasing your chances of getting noticed by recruiters.
-                        </p>
-                    </figcaption>
-                </figure>
-            </article>
-
-            <article class="feature-card">
-                <figure>
-                    <img width="48" height="48" src="{{ url_for('static', filename='images/resume-editor.svg') }}"
-                        alt="Resume editor icon representing an easy-to-use resume builder tool" />
-                    <figcaption>
-                        <h3>Fast and Easy Resume Editor</h3>
-                        <p>Build your resume quickly with our intuitive editor. Easily fill out your details, rearrange
-                            content, and preview your resume in real-time as you go.</p>
-                    </figcaption>
-                </figure>
-            </article>
-
-            <article class="feature-card">
-                <figure>
-                    <img width="48" height="48" src="{{ url_for('static', filename='images/download-resume.svg') }}"
-                        alt="Download and share resume icon for exporting resumes instantly" />
-                    <figcaption>
-                        <h3>Instant Download & Sharing</h3>
-                        <p>Once you're happy with your resume, download it in multiple formats or share it directly with
-                            potential employers. Fast, efficient, and hassle-free.</p>
-                    </figcaption>
-                </figure>
-            </article>
+        <div class="relative column aitems-center jcontent-center gap20 talign-center">
+            <header>
+                <h1>Free Online Resume Builder - Create a Professional Resume in Minutes</h1>
+            </header>
+            <p>Create a job-winning resume effortlessly using our professional resume builder. Start for free and take
+                advantage of customizable templates, ATS-friendly formatting, and an intuitive editor that ensures your
+                resume stands out. Whether you're just starting out or updating your career, our tool makes it easy to
+                create a polished, professional resume in minutes, with premium features available for even more
+                customization and control.</p>
+            <a href="#" class="row fwrap aitems-center jcontent-center gap20">
+                <button class="primary-fill">Get Started For Free</button>
+                <button id="home-sign-up-btn" class="primary-outline">Sign Up</button>
+            </a>
         </div>
-    </div>
-</section>
-<!-- End Features Section -------------------------------------- -->
+    </section>
+    <!-- End Home Section ------------------------------------------ -->
 
-<!-- Pricing Section ------------------------------------------- -->
-<section id="pricing" class="wrapper relative section-padding">
-    <!-- Tetris Background Wrapper *****************************-->
-    <div class="tetris-background"></div>
-    <!-- End Tetris Background Wrapper ************************* -->
+    <!-- Features Section ------------------------------------------ -->
+    <section id="features" class="section-padding">
+        <div class="wrapper">
+            <header class="column gap10 aitems-center jcontent-center">
+                <h2>Key Features</h2>
+                <p>Explore the powerful features that make creating your resume a breeze. With intuitive tools and
+                    customizable
+                    options, RayMaker helps you stand out to recruiters.</p>
+            </header>
+            <div class="grid-2 marginT40">
+                <article class="feature-card">
+                    <figure>
+                        <img width="48" height="48" src="{{ url_for('static', filename='images/resume-template.svg') }}"
+                            alt="Customizable resume template icon for tailored job applications" />
+                        <figcaption>
+                            <h3>Tailored Templates for Every Job</h3>
+                            <p>Choose from a wide range of professionally designed templates to suit any industry.
+                                Customize
+                                your layout and design to match your unique style and career goals.</p>
+                        </figcaption>
+                    </figure>
+                </article>
 
-    <div class="wrapper">
-        <header class="column gap10 aitems-center jcontent-center">
-            <h2>Simple, Transparent Pricing</h2>
-            <p>Start for free — upgrade anytime for more power and flexibility.</p>
-        </header>
-        <div class="relative row fwrap gap40 aitems-center jcontent-center marginT40">
-            <!-- Free Plan -->
-            <article class="pricing-card">
-                <h3>Free Plan</h3>
-                <p class="price">$0<span>/month</span></p>
-                <ul class="features-list">
-                    <li>Create up to <strong>2 resumes per day</strong></li>
-                    <li>Use <strong>1 professional template</strong></li>
-                    <li><strong>No watermark</strong> on resumes</li>
-                    <li><strong>Download as PDF</strong></li>
-                    <li><strong>Shareable online resume link</strong></li>
-                </ul>
-                <a href="#" class="button primary-outline">Start for Free</a>
-            </article>
+                <article class="feature-card">
+                    <figure>
+                        <img width="48" height="48"
+                            src="{{ url_for('static', filename='images/application-system-tracking.svg') }}"
+                            alt="ATS-friendly resume icon ensuring compatibility with applicant tracking systems" />
+                        <figcaption>
+                            <h3>Optimized for ATS</h3>
+                            <p>Ensure your resume passes through Applicant Tracking Systems with ease. Our templates are
+                                designed to meet ATS requirements, increasing your chances of getting noticed by
+                                recruiters.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </article>
 
-            <!-- Premium Plan -->
-            <article class="pricing-card premium">
-                <h3>Premium Plan</h3>
-                <p class="price">$3<span>/month</span></p>
-                <ul class="features-list">
-                    <li><strong>Unlimited resumes</strong>, anytime</li>
-                    <li>Access to <strong>all templates</strong></li>
-                    <li><strong>No watermarks</strong> ever</li>
-                    <li><strong>Download as PDF</strong></li>
-                    <li><strong>Share online links</strong> instantly</li>
-                </ul>
-                <a href="#" class="button primary-fill">Upgrade to Premium</a>
-            </article>
+                <article class="feature-card">
+                    <figure>
+                        <img width="48" height="48" src="{{ url_for('static', filename='images/resume-editor.svg') }}"
+                            alt="Resume editor icon representing an easy-to-use resume builder tool" />
+                        <figcaption>
+                            <h3>Fast and Easy Resume Editor</h3>
+                            <p>Build your resume quickly with our intuitive editor. Easily fill out your details,
+                                rearrange
+                                content, and preview your resume in real-time as you go.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article class="feature-card">
+                    <figure>
+                        <img width="48" height="48" src="{{ url_for('static', filename='images/download-resume.svg') }}"
+                            alt="Download and share resume icon for exporting resumes instantly" />
+                        <figcaption>
+                            <h3>Instant Download & Sharing</h3>
+                            <p>Once you're happy with your resume, download it in multiple formats or share it directly
+                                with
+                                potential employers. Fast, efficient, and hassle-free.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
-<!-- End Pricing Section --------------------------------------- -->
+    </section>
+    <!-- End Features Section -------------------------------------- -->
 
-<!-- Testimonials Section -------------------------------------- -->
-<section id="testimonials" class="section-padding">
-    <div class="wrapper">
-        <header class="column gap10 aitems-center jcontent-center">
-            <h2>What Job Seekers Say About RayMaker</h2>
-            <p>See how professionals and recent graduates are using our resume builder to land interviews faster.
-                Real feedback from early users who created standout resumes with ease.</p>
-        </header>
+    <!-- Pricing Section ------------------------------------------- -->
+    <section id="pricing" class="wrapper relative section-padding">
+        <!-- Tetris Background Wrapper *****************************-->
+        <div class="tetris-background"></div>
+        <!-- End Tetris Background Wrapper ************************* -->
 
-        <div class="testimonials-container marginT40 row aitems-center jcontent-center fwrap gap10">
-            <button class="primary-fill testimonial-prev" aria-label="Previous testimonial">&#8592;</button>
+        <div class="wrapper">
+            <header class="column gap10 aitems-center jcontent-center">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Start for free — upgrade anytime for more power and flexibility.</p>
+            </header>
+            <div class="relative row fwrap gap40 aitems-center jcontent-center marginT40">
+                <!-- Free Plan -->
+                <article class="pricing-card">
+                    <h3>Free Plan</h3>
+                    <p class="price">$0<span>/month</span></p>
+                    <ul class="features-list">
+                        <li>Create up to <strong>2 resumes per day</strong></li>
+                        <li>Use <strong>1 professional template</strong></li>
+                        <li><strong>No watermark</strong> on resumes</li>
+                        <li><strong>Download as PDF</strong></li>
+                        <li><strong>Shareable online resume link</strong></li>
+                    </ul>
+                    <a href="#" class="button primary-outline">Start for Free</a>
+                </article>
 
-            <div class="testimonial-wrapper">
-                <figure class="testimonial-card active">
-                    <blockquote>
-                        <p>"RayMaker helped me create a clean, professional resume in minutes. I love how easy it was to
-                            customize!"</p>
-                    </blockquote>
-                    <figcaption>Sam D., Marketing Graduate</figcaption>
-                </figure>
+                <!-- Premium Plan -->
+                <article class="pricing-card premium">
+                    <h3>Premium Plan</h3>
+                    <p class="price">$3<span>/month</span></p>
+                    <ul class="features-list">
+                        <li><strong>Unlimited resumes</strong>, anytime</li>
+                        <li>Access to <strong>all templates</strong></li>
+                        <li><strong>No watermarks</strong> ever</li>
+                        <li><strong>Download as PDF</strong></li>
+                        <li><strong>Share online links</strong> instantly</li>
+                    </ul>
+                    <a href="#" class="button primary-fill">Upgrade to Premium</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing Section --------------------------------------- -->
 
-                <figure class="testimonial-card">
-                    <blockquote>
-                        <p>"The shareable resume link was a game-changer. I could send it directly with job
-                            applications—super efficient!"</p>
-                    </blockquote>
-                    <figcaption>Fatima K., UX Designer</figcaption>
-                </figure>
+    <!-- Testimonials Section -------------------------------------- -->
+    <section id="testimonials" class="section-padding">
+        <div class="wrapper">
+            <header class="column gap10 aitems-center jcontent-center">
+                <h2>What Job Seekers Say About RayMaker</h2>
+                <p>See how professionals and recent graduates are using our resume builder to land interviews faster.
+                    Real feedback from early users who created standout resumes with ease.</p>
+            </header>
 
-                <figure class="testimonial-card">
-                    <blockquote>
-                        <p>"I didn’t expect much for free, but RayMaker totally surprised me. It’s now my go-to resume
-                            tool!"</p>
-                    </blockquote>
-                    <figcaption>Leo M., Junior Developer</figcaption>
-                </figure>
+            <div class="testimonials-container marginT40 row aitems-center jcontent-center fwrap gap10">
+                <button class="primary-fill testimonial-prev" aria-label="Previous testimonial">&#8592;</button>
+
+                <div class="testimonial-wrapper">
+                    <figure class="testimonial-card active">
+                        <blockquote>
+                            <p>"RayMaker helped me create a clean, professional resume in minutes. I love how easy it
+                                was to
+                                customize!"</p>
+                        </blockquote>
+                        <figcaption>Sam D., Marketing Graduate</figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
+                        <blockquote>
+                            <p>"The shareable resume link was a game-changer. I could send it directly with job
+                                applications—super efficient!"</p>
+                        </blockquote>
+                        <figcaption>Fatima K., UX Designer</figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
+                        <blockquote>
+                            <p>"I didn’t expect much for free, but RayMaker totally surprised me. It’s now my go-to
+                                resume
+                                tool!"</p>
+                        </blockquote>
+                        <figcaption>Leo M., Junior Developer</figcaption>
+                    </figure>
+                </div>
+
+                <button class="primary-fill testimonial-next" aria-label="Next testimonial">&#8594;</button>
             </div>
 
-            <button class="primary-fill testimonial-next" aria-label="Next testimonial">&#8594;</button>
+            <div class="testimonial-indicators row jcontent-center gap10 marginT20">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
         </div>
+    </section>
+    <!-- End Testimonials Section ---------------------------------- -->
 
-        <div class="testimonial-indicators row jcontent-center gap10 marginT20">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+    <!-- FAQ Section ----------------------------------------------- -->
+    <section id="faq" class="wrapper relative section-padding">
+        <header class="column gap10 aitems-center jcontent-center">
+            <h2>Frequently Asked Questions About Our Resume Builder</h2>
+            <p>Get quick answers about how RayMaker helps you build professional, ATS-friendly resumes in minutes. Learn
+                about features, templates, downloads, and what makes our free and premium plans different.</p>
+        </header>
+        <div class="relative row fwrap gap40 aitems-center jcontent-center marginT40">
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Is RayMaker really free to use?</h3>
+                    <button class="primary-fill">1</button>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our free plan allows you to create up to 2 resumes per day with one professional template,
+                        no watermark, and download or share them as a link.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">What’s included in the premium plan?</h3>
+                    <button class="primary-fill">2</button>
+                </div>
+                <div class="faq-answer">
+                    <p>The premium plan unlocks unlimited resume creation, access to all templates, and permanent
+                        watermark-free downloads. It’s just $3/month.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Are RayMaker resumes ATS-friendly?</h3>
+                    <button class="primary-fill">3</button>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. All our templates are optimized for Applicant Tracking Systems, helping your resume
+                        get noticed by recruiters and hiring managers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Can I share my resume as a link?</h3>
+                    <button class="primary-fill">4</button>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, every resume can be shared as an online link. It’s a quick way to send your resume to
+                        employers, and you can update it anytime. Keep in mind, this link will be publicly viewable.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Do I need to install anything?</h3>
+                    <button class="primary-fill">5</button>
+                </div>
+                <div class="faq-answer">
+                    <p>No downloads or installations required. RayMaker is 100% browser-based, so you can build and edit
+                        your resume from any device.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Is my data safe with RayMaker?</h3>
+                    <button class="primary-fill">6</button>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Resume data is only stored for signed-up users and handled securely. If you generate a
+                        shareable
+                        link, your resume becomes publicly accessible via that link. You have full control to edit or
+                        delete
+                        your resumes if you have an account.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="row gap10 aitems-center jcontent-sbetween">
+                    <h3 class="faq-question">Can I access my resume later?</h3>
+                    <button class="primary-fill">7</button>
+                </div>
+                <div class="faq-answer">
+                    <p>You can view your resume later using the shareable link. However, to edit or delete it, you'll
+                        need
+                        to sign up for an account so we can securely store and associate it with you.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<!-- End Testimonials Section ---------------------------------- -->
+    </section>
+    <!-- End FAQ Section ------------------------------------------- -->
+</main>
+
+<!-- Including Footer ------------------------------------------ -->
+{% include 'components/footer.html' %}
+<!-- End Footer ------------------------------------------------ -->
 
 <!-- Scripts --------------------------------------------------- -->
 <script src="{{ url_for('static', filename='scripts/decoration/tetris.js') }}"></script>
