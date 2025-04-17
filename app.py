@@ -1,9 +1,10 @@
 # Import necessary modules for the web application ***************************************
 
-# Flask modules
+# Flask & Default modules
 from flask import Flask, render_template, redirect, url_for, request, abort
 from flask_talisman import Talisman
 from flask_minify import Minify
+import os
 
 # Forms Modules
 from forms import NewsletterForm
@@ -17,7 +18,7 @@ Minify(app=app, html=True, js=False, cssless=False)
 
 # Application configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = 'MY_SECRET_KEY'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
 
