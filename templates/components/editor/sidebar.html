@@ -1,5 +1,18 @@
 <aside class="sidebar">
 
+    <!-- Header -->
+    <div class="sidebar-header">
+        <div class="logo-container row aitems-center jcontent-sbetween">
+            <a href="{{ url_for('resume_builder.editor') }}">
+                <div class="title">Editor</div>
+            </a>
+            <button class="blank" data-close-sidebar="true">
+                <img width="28" height="28" class="close" src="{{ url_for('static', filename='icons/close_icon.svg') }}"
+                    alt="Close popup window button">
+            </button>
+        </div>
+    </div>
+
     <!-- Basic Info -->
     <div class="sidebar-section">
         <div class="section-header row jcontent-sbetween aitems-center">

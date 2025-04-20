@@ -1,0 +1,181 @@
+<!-- Sample simple popup: 
+     Copy the HTML structure below into your HTML file. 
+     Place the JavaScript code into a separate .js file, 
+     and the CSS styles into a separate .css file for better organization and maintainability. -->
+
+<style>
+    .popup {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99999;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+
+        /* Initially */
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.4s, visibility 0.4s;
+    }
+
+    .popup.show {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .popup.simple .inner {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: white;
+
+        /* Initially */
+        opacity: 0;
+        transform: translateY(20px);
+
+        transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+    }
+
+    .popup.show .inner {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .popup.simple .inner h2 {
+        font-size: 1.5rem;
+    }
+
+    .popup .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .popup .header img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .popup .header img.close {
+        width: 28px;
+        height: 28px;
+    }
+
+    .popup-title-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .template-mode-card {
+        flex: 1;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        border: 2px solid white;
+        text-align: center;
+    }
+
+    .template-mode-card.active {
+        border: 2px solid var(--primary-color);
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .template-mode-card:hover {
+        border: 2px solid var(--primary-color);
+    }
+
+    .template-mode-card img {
+        width: 48px;
+        height: 49px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div id="template-mode-popup" class="popup simple">
+    <div class="inner">
+        <div class="header">
+            <img width="48" height="48" src="{{ url_for('static', filename='icons/informative_popup.svg') }}"
+                alt="Popup icon displaying information about resume template modes">
+            <button class="blank">
+                <img width="28" height="28" data-close-popup="true" class="close"
+                    src="{{ url_for('static', filename='icons/close_icon.svg') }}" alt="Close popup window button">
+            </button>
+        </div>
+
+        <div class="popup-title-container">
+            <h2>Choose a mode!</h2>
+            <p>Would you like a Creative or ATS-friendly mode?</p>
+        </div>
+
+        <div class="row aitems-center jcontent-center gap10">
+            <div class="template-mode-card" data-mode="ats">
+                <img width="48" height="48" src="{{ url_for('static', filename='icons/ats_mode.svg') }}"
+                    alt="ATS-friendly resume mode icon, optimized for recruiter systems">
+                <h3>ATS-friendly</h3>
+                <p>Optimized for recruiter systems</p>
+            </div>
+            <div class="template-mode-card" data-mode="creative">
+                <img width="48" height="48" src="{{ url_for('static', filename='icons/creative_mode.svg') }}"
+                    alt="Creative resume mode icon, designed with visual appeal and personality">
+                <h3>Creative mode</h3>
+                <p>Stylish design for personal use</p>
+            </div>
+        </div>
+
+        <button id="select-resume-mode-btn" class="primary-fill">Confirm Selection</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const templateModecards = document.querySelectorAll('.template-mode-card');
+        const confirmTemplateModeBtn = document.getElementById('select-resume-mode-btn');
+        let selectedMode = null;
+
+        templateModecards.forEach(card => {
+            card.addEventListener('click', () => {
+                templateModecards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                selectedMode = card.getAttribute('data-mode');
+            });
+        });
+
+        confirmTemplateModeBtn.addEventListener('click', () => {
+            if (selectedMode) {
+                alert(`You selected: ${selectedMode}`);
+            } else {
+                alert('Please select a mode first.');
+            }
+        });
+
+        const templateModePopup = document.getElementById('template-mode-popup');
+        setTimeout(() => {
+            templateModePopup.classList.add('show');
+        }, 200);
+
+        if (document.querySelector('[data-close-popup="true"]')) {
+            document.querySelectorAll('[data-close-popup="true"]').forEach(closeBtn => {
+                closeBtn.addEventListener('click', () => {
+                    const popup = closeBtn.closest('.popup');
+                    if (popup)
+                        popup.classList.remove('show');
+                });
+            });
+        }
+    });
+</script>

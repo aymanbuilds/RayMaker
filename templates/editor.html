@@ -48,7 +48,7 @@
 
 {% block body %}
 
-<div class="column" style="height: 100%;">
+<div class="column">
     <!-- Including Header ------------------------------------------ -->
     {% include 'components/editor/header.html' %}
     <!-- End Header ------------------------------------------------ -->
@@ -62,14 +62,56 @@
         <div class="editor-preview">
             <div class="resume-page">
                 <!-- Resume content goes here -->
+                template
             </div>
         </div>
     </div>
     <!-- End Editor Wrapper Section -------------------------------- -->
 </div>
 
+<!-- Popups **************************************************** -->
+
+<!-- Template Mode Popup --------------------------------------- -->
+<div id="template-mode-popup" class="popup simple">
+    <div class="inner">
+        <div class="header">
+            <img width="48" height="48" src="{{ url_for('static', filename='icons/informative_popup.svg') }}"
+                alt="Popup icon displaying information about resume template modes">
+            <button class="blank">
+                <img width="28" height="28" data-close-popup="true" class="close"
+                    src="{{ url_for('static', filename='icons/close_icon.svg') }}" alt="Close popup window button">
+            </button>
+        </div>
+
+        <div class="popup-title-container">
+            <h2>Choose a mode!</h2>
+            <p>Would you like a Creative or ATS-friendly mode?</p>
+        </div>
+
+        <div class="row aitems-center jcontent-center gap10">
+            <div class="template-mode-card" data-mode="ats">
+                <img width="48" height="48" src="{{ url_for('static', filename='icons/ats_mode.svg') }}"
+                    alt="ATS-friendly resume mode icon, optimized for recruiter systems">
+                <h3>ATS-friendly</h3>
+                <p>Optimized for recruiter systems</p>
+            </div>
+            <div class="template-mode-card" data-mode="creative">
+                <img width="48" height="48" src="{{ url_for('static', filename='icons/creative_mode.svg') }}"
+                    alt="Creative resume mode icon, designed with visual appeal and personality">
+                <h3>Creative mode</h3>
+                <p>Stylish design for personal use</p>
+            </div>
+        </div>
+
+        <button id="select-resume-mode-btn" class="primary-fill">Confirm Selection</button>
+    </div>
+</div>
+<!-- End Template Mode Popup ----------------------------------- -->
+
+<!-- End Popups ************************************************ -->
+
 <!-- Scripts --------------------------------------------------- -->
-<script src="{{ url_for('static', filename='scripts/editor/script.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/editor/script.js') }}" nonce="{{ nonce }}"></script>
 <!-- End Scripts ----------------------------------------------- -->
 
 {% endblock %}

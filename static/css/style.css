@@ -612,10 +612,13 @@ footer .wrapper {
         flex-direction: column;
         gap: 40px;
         padding: 40px;
+
+        /* Initially */
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.4s, left 0.4s;
+
+        transition: opacity 0.4s, left 0.4s, visibility 0.4s;
     }
 
     header.main nav.show {
