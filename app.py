@@ -2,6 +2,7 @@
 
 # Flask & Default modules
 from flask import Flask, render_template, redirect, url_for, request, abort, g
+from flask_compress import Compress
 from flask_talisman import Talisman
 from flask_minify import Minify
 import os
@@ -18,15 +19,16 @@ from editor.routes import editor_blueprint
 
 # Initialize the Flask application
 app = Flask(__name__)
+Compress(app)
 Minify(app=app, html=True, js=False, cssless=False)
 
 def generate_nonce():
-    """Generate a random nonce."""
+    """ Generate a random nonce. """
     return secrets.token_urlsafe(16)
 
 @app.before_request
 def set_nonce():
-    """Set nonce for each request."""
+    """ Set nonce for each request. """
     g.nonce = generate_nonce()
 
 app.register_blueprint(editor_blueprint, url_prefix='/resume-builder')
@@ -45,7 +47,8 @@ csp = {
     'img-src': ["self", "data:", "https:"],
     'font-src': ["self", "https:"],
     'object-src': "none",
-    'base-uri': "self"
+    'base-uri': "self",
+    'connect-src': ["'self'", "https://127.0.0.1:5000"]
 }
 
 # Apply security heards using Talisman
@@ -58,7 +61,7 @@ talisman = Talisman(
 
 @app.after_request
 def add_csp_headers(response):
-    """Add CSP headers with the generated nonce."""
+    """ Add CSP headers with the generated nonce. """
     if 'nonce' not in g:
         g.nonce = generate_nonce()
     
@@ -70,6 +73,25 @@ def add_csp_headers(response):
     )
     return response
 
+# List of routes to apply 1-day cache (index pages)
+index_routes = ['index', 'home', 'landing'] 
+
+@app.after_request
+def add_cache_headers(response):
+    """ Cache headers """
+    if request.endpoint == 'static':
+        # Cache static files for 1 year
+        response.cache_control.max_age = 31536000  # 1 year
+    elif request.endpoint in index_routes:  # Check if the request endpoint is in the list of index routes
+        # Cache these pages for 1 day
+        response.cache_control.max_age = 86400  # 1 day
+    else:
+        # Cache other pages for 1 hour
+        response.cache_control.max_age = 3600  # 1 hour
+
+    response.cache_control.public = True
+    return response
+
 # Default route (Home)
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -78,9 +100,5 @@ def index():
 
 # Run the application
 if __name__ == '__main__':
-    # For Production Mode
-    # app.run(debug=False)
-
-    # For Development Mode
     app.run(debug=True, ssl_context=('C:/Users/pc/Documents/FREELANCE/Aniss Cherkaoui/Tnational/cert.pem', 
                                     'C:/Users/pc/Documents/FREELANCE/Aniss Cherkaoui/Tnational/key.pem'))

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Sidebar Actions --------------------------------------------------------------------
     const sectionHeaders = document.querySelectorAll('.section-header');
-    const buttons = document.querySelectorAll('.primary-fill');
 
     function toggleSection(event) {
         event.stopPropagation();
@@ -20,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sectionHeaders.forEach(header => {
         header.addEventListener('click', toggleSection);
-    });
-
-    buttons.forEach(button => {
-        button.addEventListener('click', toggleSection);
     });
 
     if (document.querySelector('[data-close-sidebar="true"]')) {
@@ -60,7 +55,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     confirmTemplateModeBtn.addEventListener('click', () => {
         if (selectedMode) {
-            alert(`You selected: ${selectedMode}`);
+            fetch('/resume-builder/set-mode', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrf_token]').value
+                },
+                body: JSON.stringify({ mode: selectedMode })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.html) {
+                        document.querySelector('.resume-page').innerHTML = data.html;
+
+                        // Close Popup
+                        const popup = document.getElementById('template-mode-popup');
+                        if (popup)
+                            popup.classList.remove('show');
+                    }
+                })
+                .catch(err => alert('Error: ' + err));
         } else {
             alert('Please select a mode first.');
         }

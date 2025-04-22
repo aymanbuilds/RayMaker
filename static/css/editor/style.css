@@ -301,7 +301,7 @@ header.main {
 
 .resume-page {
     Width: 794px;
-    Height: 1123px;
+    /* Height: 1123px; */
     background: #fff;
     margin: 40px auto;
     padding: 40px;
@@ -499,3 +499,93 @@ header.main {
 }
 
 /* End Media Queries ******************************************************************************** */
+
+/* Templates Styles ********************************************************************************* */
+
+.ats-template {
+    font-family: "Calibri", "Arial", sans-serif;
+    font-size: 11pt;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Headings */
+.ats-template h1 {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Calibri", "Arial", sans-serif;
+}
+
+.ats-template h2 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: "Calibri", "Arial", sans-serif;
+}
+
+.ats-template h3 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-family: "Calibri", "Arial", sans-serif;
+}
+
+/* Text elements */
+.ats-template p,
+.ats-template span,
+.ats-template li,
+.ats-template a {
+    font-size: 11pt;
+    font-family: "Calibri", "Arial", sans-serif;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+/* Strong, em, etc. */
+.ats-template strong {
+    font-weight: bold;
+    font-family: "Calibri", "Arial", sans-serif;
+}
+
+.ats-template em {
+    font-style: italic;
+}
+
+/* List */
+.ats-template ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ats-template li {
+    margin-bottom: 4px;
+}
+
+/* Sections */
+.ats-template-section {
+    margin-top: 30px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 20px;
+}
+
+/* Header */
+.ats-template-header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+}
+
+/* Info line (e.g., contact info) */
+.ats-template-info-line {
+    margin: 2px 0;
+    font-size: 10.5pt;
+}
+
+/* Small/secondary text */
+.ats-template-small {
+    font-size: 10pt;
+    color: #666;
+}
+
+/* End Templates Styles ***************************************************************************** */

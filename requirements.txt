@@ -5,3 +5,5 @@ bleach
 flask-wtf
 flask-talisman
 flask-minify
+flask-compress
+bleach

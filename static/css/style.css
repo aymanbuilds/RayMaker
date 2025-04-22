@@ -9,6 +9,7 @@
 
 :root {
     --primary-color: royalblue;
+    --primary-color-dark: rgb(51, 87, 197);
     --light-color: rgb(238, 246, 255);
 }
 
@@ -523,6 +524,10 @@ footer .wrapper {
 
 .footer-logo-container {
     max-width: 300px;
+}
+
+footer .logo-container a{
+    color: var(--primary-color-dark);
 }
 
 .footer-description {

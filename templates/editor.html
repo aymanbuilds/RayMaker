@@ -114,4 +114,7 @@
 <script src="{{ url_for('static', filename='scripts/editor/script.js') }}" nonce="{{ nonce }}"></script>
 <!-- End Scripts ----------------------------------------------- -->
 
+<!-- Hidden CSRF Token -->
+<input type="hidden" name="csrf_token" value="{{ mode_form.csrf_token._value() }}">
+
 {% endblock %}
