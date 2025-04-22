@@ -17,6 +17,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function expandSection(sectionIndex) {
+        const sidebarSections = document.querySelectorAll('.sidebar-section');
+        if (sidebarSections.length > sectionIndex) {
+            const section = sidebarSections[sectionIndex];
+            section.classList.add('expanded');
+
+            // Toggle button text (+)
+            const button = section.querySelector('.primary-fill');
+            button.textContent = '-';
+        }
+    }
+
     sectionHeaders.forEach(header => {
         header.addEventListener('click', toggleSection);
     });
@@ -72,6 +84,23 @@ document.addEventListener('DOMContentLoaded', function () {
                         const popup = document.getElementById('template-mode-popup');
                         if (popup)
                             popup.classList.remove('show');
+
+                        // Expand Basic Info Section
+                        expandSection(0);
+
+                        // Fill in Initial Boxes
+                        setVal('#sidebar-fullname', 'John Doe');
+                        document.getElementById('sidebar-fullname').focus();
+
+                        setVal('#sidebar-fullname', 'John Doe');
+                        setVal('#sidebar-email', 'john.doe@example.com');
+                        setVal('#sidebar-phone', '(123) 456-7890');
+                        setVal('#sidebar-location', 'New York, NY');
+                        setVal('#sidebar-linkedIn', 'linkedin.com/in/johndoe');
+                        setVal('#sidebar-website', 'www.johndoe.dev');
+
+                        // Set Inputs Events
+                        initializeTemplateActions();
                     }
                 })
                 .catch(err => alert('Error: ' + err));
@@ -97,4 +126,61 @@ document.addEventListener('DOMContentLoaded', function () {
     // End Template Mode Popup ------------------------------------------------------------
 
     // End Popup Actions ******************************************************************
+
+    // Initialize Template Actions ********************************************************
+    function initializeTemplateActions() {
+        const nameField = document.getElementById('sidebar-fullname');
+        const emailField = document.getElementById('sidebar-email');
+        const phoneField = document.getElementById('sidebar-phone');
+        const locationField = document.getElementById('sidebar-location');
+        const linkedInField = document.getElementById('sidebar-linkedIn');
+        const websiteField = document.getElementById('sidebar-website');
+
+        const nameDisplay = document.getElementById('name');
+        const contactDisplay = document.getElementById('contact-info');
+        const locationDisplay = document.getElementById('location-info');
+
+        function updateHeader() {
+            const name = nameField.value.trim();
+            const email = emailField.value.trim();
+            const phone = phoneField.value.trim();
+            const location = locationField.value.trim();
+            const linkedIn = linkedInField.value.trim();
+            const website = websiteField.value.trim();
+
+            // NAME
+            nameDisplay.textContent = name;
+
+            // CONTACT INFO
+            const contactParts = [];
+            if (email) contactParts.push(`Email: ${email}`);
+            if (phone) contactParts.push(`Phone: ${phone}`);
+            contactDisplay.textContent = contactParts.join(' | ') || "";
+
+            // LOCATION INFO
+            const locationParts = [];
+            if (location) locationParts.push(`Location: ${location}`);
+            if (linkedIn) locationParts.push(`LinkedIn: ${linkedIn}`);
+            if (website) locationParts.push(`Portfolio: ${website}`);
+            locationDisplay.textContent = locationParts.join(' | ') || "";
+        }
+
+        // Bind inputs
+        const inputs = [
+            nameField, emailField, phoneField,
+            locationField, linkedInField, websiteField
+        ];
+        inputs.forEach(input => input.addEventListener('input', updateHeader));
+
+        // Initial update to sync preview with pre-filled input (if any)
+        updateHeader();
+    }
+    // End Initialize Template Actions ****************************************************
 });
+
+// Helper Functions
+function setVal(querySelector, value) {
+    const element = document.querySelector(querySelector);
+    if (element)
+        element.value = value;
+}
